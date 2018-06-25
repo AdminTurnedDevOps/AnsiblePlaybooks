@@ -3,13 +3,13 @@
   hosts: hosts
   become: true
 
-  tasks
-  - name: Install MySQL from yum repo
-    yum:
-      name: mysql-server
-      state: present
+  tasks:
+    - name: Install MySQL from yum repo
+      yum:
+        name: mysql-server
+        state: present
   
-  - name: Give MySQL a username and password
+    - name: Give MySQL a username and password
       mysql_user:
         user={{mysql_user}}
         password={{password}}
